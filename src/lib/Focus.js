@@ -22,6 +22,9 @@ class AutomationFocus
         // Only consider the BuildMenu init step
         if (initStep == Automation.InitSteps.BuildMenu)
         {
+            // Disable 'Focus on' by default
+            Automation.Utils.LocalStorage.setDefaultValue(this.Settings.FeatureEnabled, false);
+
             this.__internal__buildFunctionalitiesList();
             this.__internal__buildMenu();
         }
@@ -150,9 +153,6 @@ class AutomationFocus
      */
     static __internal__buildMenu()
     {
-        // Disable 'Focus on' by default
-        Automation.Utils.LocalStorage.setDefaultValue(this.Settings.FeatureEnabled, false);
-
         // Add the related buttons to the automation menu
         let focusContainer = document.createElement("div");
         focusContainer.style.textAlign = "center";
