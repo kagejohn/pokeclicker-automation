@@ -279,16 +279,19 @@ class AutomationFocusAchievements
                     if (a.region > b.region) return 1;
 
                     // Then route kill
-                    if (a.property instanceof RouteKillRequirement) return 1;
-                    if (b.property instanceof RouteKillRequirement) return -1;
+                    if ((a.property instanceof RouteKillRequirement) && (b.property instanceof RouteKillRequirement)) return 0;
+                    if (a.property instanceof RouteKillRequirement) return -1;
+                    if (b.property instanceof RouteKillRequirement) return 1;
 
                     // Then Gym clear
-                    if (a.property instanceof ClearGymRequirement) return 1;
-                    if (b.property instanceof ClearGymRequirement) return -1;
+                    if ((a.property instanceof ClearGymRequirement) && (b.property instanceof ClearGymRequirement)) return 0;
+                    if (a.property instanceof ClearGymRequirement) return -1;
+                    if (b.property instanceof ClearGymRequirement) return 1;
 
                     // Finally Dungeon clear
-                    if (a.property instanceof ClearDungeonRequirement) return 1;
-                    if (b.property instanceof ClearDungeonRequirement) return -1;
+                    if ((a.property instanceof ClearDungeonRequirement) && (b.property instanceof ClearDungeonRequirement)) return 0;
+                    if (a.property instanceof ClearDungeonRequirement) return -1;
+                    if (b.property instanceof ClearDungeonRequirement) return 1;
                 }
             )[0];
         }
