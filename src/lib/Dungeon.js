@@ -350,7 +350,7 @@ class AutomationDungeon
 
                         let currentLocation = { x: columnIndex, y: rowIndex };
 
-                        if (DungeonRunner.map.hasAccesToTile(currentLocation))
+                        if (DungeonRunner.map.hasAccessToTile(currentLocation))
                         {
                             // Store chest positions
                             if (tile.type() === GameConstants.DungeonTile.chest)
